@@ -16,4 +16,8 @@ export class ComentarioService {
     return this.http.get<Comentario[]>(this.api);
   }
 
+  createComentario(comentario : Comentario):Observable<Comentario>{
+    return this.http.post<Comentario>(this.api, comentario);
+  }
+
 }
