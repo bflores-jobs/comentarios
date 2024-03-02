@@ -20,4 +20,8 @@ export class ComentarioService {
     return this.http.post<Comentario>(this.api, comentario);
   }
 
+  deleteComentarioById(id : string):Observable<any>{
+    return this.http.delete(this.api + '/' + id);
+  }
+
 }

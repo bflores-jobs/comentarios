@@ -26,4 +26,10 @@ export class ComentarioListComponent implements OnInit{
     );
   }
 
+  deleteComentario(id : string){
+    this.comentarioService.deleteComentarioById(id).subscribe(
+      ()=> this.listComentarios()
+    )
+  }
+
 }
