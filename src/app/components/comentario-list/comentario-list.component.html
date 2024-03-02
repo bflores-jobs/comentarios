@@ -1,7 +1,19 @@
 <h1>Listado de comentarios</h1>
 
-<ul>
-    <li *ngFor = "let c of comentarios">
-        {{c.correo}} - {{c.region}} - {{c.comentario}}
-    </li>
-</ul>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Correo</th>
+        <th scope="col">Region</th>
+        <th scope="col">Comentario</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor = "let c of comentarios">
+        <td>{{c.correo}}</td>
+        <td>{{c.region}}</td>
+        <td>{{c.comentario}}</td>
+      </tr>      
+    </tbody>
+  </table>
+
