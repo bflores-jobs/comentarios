@@ -8,9 +8,13 @@ _Aplicativo mantenedor de comentarios_
 ### FrontEnd
 
 _Visual Studio Code_
+
 _1.- git clone https://github.com/bflores-jobs/comentarios.git_
+
 _2.- Correr aplicativo web en terminal : ng serve_
+
 _3.- Abrir index.html en un navegador._
+
 _Url por defecto: http://localhost:_4200_
 
 ### BackEnd
@@ -26,6 +30,7 @@ _Mantenedor de comentarios._
 
 ### Instalación 🔧
 _Visual Studio Code_
+
 _1.- git clone https://github.com/bflores-jobs/home.git_
 
 _2.- Abrir index.html. ¡Eso es todo!_
