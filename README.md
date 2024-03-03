@@ -20,12 +20,12 @@ _1.- Descomprimir archivo BackEnd.zip_
 _2.- Abrir con IDE_
 _3.- Ejecutar en url por defecto: http://localhost:8080_
 
-# Comentarios
+# Aplicativo
 
 _Mantenedor de comentarios._
 
 ### Instalación 🔧
-
+_Visual Studio Code_
 _1.- git clone https://github.com/bflores-jobs/home.git_
 
 _2.- Abrir index.html. ¡Eso es todo!_
