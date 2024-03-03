@@ -16,7 +16,7 @@ _2.- Correr aplicativo web en terminal : ng serve_
 
 _3.- Abrir index.html en un navegador._
 
-_Url por defecto: http://localhost:_4200_
+_Url por defecto: http://localhost:4200_
 
 
 ### BackEnd
