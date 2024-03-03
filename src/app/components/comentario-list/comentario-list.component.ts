@@ -27,6 +27,7 @@ export class ComentarioListComponent implements OnInit{
   }
 
   deleteComentario(id : string){
+    console.log(id);
     this.comentarioService.deleteComentarioById(id).subscribe(
       ()=> this.listComentarios()
     )
