@@ -20,14 +20,9 @@ _1.- Descomprimir archivo BackEnd.zip_
 _2.- Abrir con IDE_
 _3.- Ejecutar en url por defecto: http://localhost:8080_
 
-# Bladimir Flores
+# Comentarios
 
-_Hola, bienvenidos soy desarrollador Full Stack Java.
-Desarrollo de aplicaciones Web: HTML, CSS, JavaScript.
-Modelo Vista Controlador (MVC).
-Programación Orientada a Objetos (POO).
-Base de datos SQL.
-Patrones de diseño._
+_Mantenedor de comentarios._
 
 ### Instalación 🔧
 
