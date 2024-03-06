@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Comentario } from '../../comentario';
+import { Comentario } from '../../model/comentario';
 import { ComentarioService } from '../../service/comentario.service';
+import { Region } from '../../model/region';
 
 @Component({
   selector: 'app-comentario-list',
@@ -10,8 +11,9 @@ import { ComentarioService } from '../../service/comentario.service';
 export class ComentarioListComponent implements OnInit{
 
   comentarios : Comentario [] = [];
-
+ 
   constructor(private comentarioService : ComentarioService){}
+
 
   ngOnInit(): void{ 
     this.listComentarios();   
@@ -31,6 +33,10 @@ export class ComentarioListComponent implements OnInit{
     this.comentarioService.deleteComentarioById(id).subscribe(
       ()=> this.listComentarios()
     )
+  }
+
+  editComentario(correo : string){
+    console.log(correo);
   }
 
 }

@@ -7,15 +7,18 @@
         <th scope="col">Correo</th>
         <th scope="col">Region</th>
         <th scope="col">Comentario</th>
-        <th scope="col">Eliminar</th>        
+        <th scope="col">Acciones</th>        
       </tr>
     </thead>
     <tbody>
       <tr  *ngFor = "let c of comentarios">
         <td>{{c.correo}}</td>
-        <td>{{c.region}}</td>
+        <td>{{c.region.nombre}}</td>
         <td>{{c.comentario}}</td>
-        <td> <button class="btn btn-danger" (click)="deleteComentario(c.correo)">Eliminar</button> </td>
+        <div class="align-middle">
+          <td> <button class="btn btn-primary" (click)="editComentario(c.correo)">Editar</button> </td>
+          <td> <button class="btn btn-danger" (click)="deleteComentario(c.correo)">Eliminar</button> </td>
+        </div>
       </tr>      
     </tbody>
   </table>
