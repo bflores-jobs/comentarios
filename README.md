@@ -29,3 +29,15 @@ _2.- Abrir con IDE_
 
 _3.- Ejecutar en url por defecto: http://localhost:8080_
 
+
+### Base de datos H2
+
+_Base de datos creada en memoria_
+
+_Se crean 2 tablas Comentario y Region, relacionadas N:1_
+
+_Se pobla la base de datos con 5 comentarios y 16 regiones. Archivo data.sql_
+
+
+
+
