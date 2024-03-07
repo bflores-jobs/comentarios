@@ -24,4 +24,12 @@ export class ComentarioService {
     return this.http.delete(this.api + '/' + id);
   }
 
+  getComentarioByid(id : string):Observable<Comentario>{
+    return this.http.get<Comentario>(this.api + '/' + id);
+  }
+
+  updateComentario(comentario : Comentario):Observable<Comentario>{
+    return this.http.put<Comentario>(this.api,comentario);
+  }
+
 }

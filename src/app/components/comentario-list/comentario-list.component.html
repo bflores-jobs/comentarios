@@ -16,7 +16,7 @@
         <td>{{c.region.nombre}}</td>
         <td>{{c.comentario}}</td>
         <div class="align-middle">
-          
+          <td> <button class="btn btn-primary" (click)="editComentario(c)">Editar</button> </td>
           <td> <button class="btn btn-danger" (click)="deleteComentario(c.correo)">Eliminar</button> </td>
         </div>
       </tr>      

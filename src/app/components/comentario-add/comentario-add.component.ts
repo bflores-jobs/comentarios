@@ -3,6 +3,7 @@ import { Comentario } from '../../model/comentario';
 import { ComentarioService } from '../../service/comentario.service';
 import { Region } from '../../model/region';
 import { RegionService } from '../../service/region.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comentario-add',
@@ -17,6 +18,7 @@ export class ComentarioAddComponent implements OnInit{
   regiones : Region [] = [];
 
   constructor(
+    private router : Router,
     private comentarioService : ComentarioService,
     private regionService: RegionService
     ){    
@@ -38,7 +40,6 @@ export class ComentarioAddComponent implements OnInit{
   }
 
   addComentario(){
-
     let comentario = new Comentario(this.correo, this.region, this.comentario);
     console.log(comentario);
     if(this.region.id != 0){
@@ -46,6 +47,7 @@ export class ComentarioAddComponent implements OnInit{
         res => console.log(res)
       );
     }
+    this.router.navigate([""]);
     
   }
 

@@ -8,17 +8,21 @@ import { ComentarioListComponent } from './components/comentario-list/comentario
 import { ComentarioAddComponent } from './components/comentario-add/comentario-add.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { ComentarioEditComponent } from './components/comentario-edit/comentario-edit.component';
+
 
 const routes : Routes = [
   {path:'', component:ComentarioListComponent}, //http://localhost:4200
   {path:'comentario/add', component:ComentarioAddComponent}, //http://localhost:4200/comentario/add
+  {path:'comentario/edit', component:ComentarioEditComponent} //http://localhost:4200/comentario/edit
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ComentarioListComponent,
-    ComentarioAddComponent
+    ComentarioAddComponent,
+    ComentarioEditComponent
   ],
   imports: [
     BrowserModule,

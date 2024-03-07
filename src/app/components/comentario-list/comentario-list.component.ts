@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Comentario } from '../../model/comentario';
 import { ComentarioService } from '../../service/comentario.service';
 import { Region } from '../../model/region';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comentario-list',
@@ -11,8 +12,9 @@ import { Region } from '../../model/region';
 export class ComentarioListComponent implements OnInit{
 
   comentarios : Comentario [] = [];
- 
-  constructor(private comentarioService : ComentarioService){}
+  comentario!: Comentario;
+   
+  constructor(private comentarioService : ComentarioService, private router : Router){}
 
 
   ngOnInit(): void{ 
@@ -35,8 +37,10 @@ export class ComentarioListComponent implements OnInit{
     )
   }
 
-  editComentario(correo : string){
-    console.log(correo);
+  editComentario(comentario : Comentario):void{
+    console.log(comentario);
+    localStorage.setItem("id", comentario.correo);
+    this.router.navigate(["comentario/edit"]);
   }
 
 }

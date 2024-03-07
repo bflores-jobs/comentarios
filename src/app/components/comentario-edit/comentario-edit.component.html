@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Actuaizar comentario</h2>
+    <form>
+    
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input [(ngModel)]="comentario.correo" name="correo" type="email" class="form-control" id="correo" disabled>      
+        </div>
+    
+        <div class="mb-3">
+            <select [(ngModel)]="comentario.region.id" name="region" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected value="0">Seleccionar region</option>
+                <option *ngFor = "let r of regiones" value="{{r.id}}">{{r.nombre}}</option>
+            </select>
+        </div>
+    
+        <div class="mb-3">
+            <label for="comentario" class="form-label">Comentario</label>
+            <input [(ngModel)]="comentario.comentario" name="comentario" type="text" class="form-control" id="comentario">      
+        </div> 
+        
+        <button type="submit" class="btn btn-primary me-3" (click)="addComentario()">Actualizar</button>
+        <a class="btn btn-primary me-3" routerLink="/">Cancelar</a>
+        
+    
+    </form>
+    </div>
