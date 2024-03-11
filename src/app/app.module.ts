@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ComentarioListComponent } from './components/comentario-list/comentario-list.component';
 import { ComentarioAddComponent } from './components/comentario-add/comentario-add.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ComentarioEditComponent } from './components/comentario-edit/comentario-edit.component';
 
@@ -29,6 +29,7 @@ const routes : Routes = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

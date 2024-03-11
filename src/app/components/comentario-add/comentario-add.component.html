@@ -1,27 +1,45 @@
 <div class="container">
 <h2>Crear comentario</h2>
-<form>
+<form >
 
     <div class="mb-3">
         <label for="correo" class="form-label">Correo</label>
-        <input [(ngModel)]="correo" name="correo" type="email" class="form-control" id="correo">      
+        <input [(ngModel)]="comentario.correo" name="comentario.correo" 
+            type="email" class="form-control" id="correo" 
+            required #correo="ngModel">      
+    </div>
+    <div [hidden]="correo.valid || correo.pristine"
+             class="alert alert-danger">
+          Nombre es requerido
     </div>
 
     <div class="mb-3">
-        <select [(ngModel)]="region.id" name="region.id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+        <select [(ngModel)]="comentario.region.id" name="comentario.region.id" 
+            class="form-select" id="region" aria-label="Floating label select example" 
+            required #region="ngModel">
             <option selected value="0">Seleccionar region</option>
             <option *ngFor = "let r of regiones" value="{{r.id}}">{{r.nombre}}</option>
         </select>
     </div>
+    <div [hidden]="region.value > 0 || region.pristine" class="alert alert-danger">
+        Región es requerida
+    </div>
 
     <div class="mb-3">
         <label for="comentario" class="form-label">Comentario</label>
-        <input [(ngModel)]="comentario" name="comentario" type="text" class="form-control" id="comentario">      
+        <input [(ngModel)]="comentario.comentario" name="comentario.comentario" 
+        type="text" class="form-control" id="comentario" 
+        required #mensaje="ngModel">      
     </div> 
+    <div [hidden]="mensaje.valid || mensaje.pristine"
+             class="alert alert-danger">
+          Comentario es requerido
+    </div>
     
-    <button type="submit" class="btn btn-primary me-3" (click)="addComentario()">Crear</button>
-    <a class="btn btn-primary me-3" routerLink="/">Cancelar</a>
+    <button type="submit" class="btn btn-primary me-3" [disabled]="!correo.valid || !mensaje.valid || !(region.value > 0)" (click)="addComentario()">Crear</button>
+    <a class="btn btn-secondary me-3" routerLink="/">Cancelar</a>
     
 
 </form>
+<div>{{resultado}}</div>
 </div>

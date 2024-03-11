@@ -4,6 +4,8 @@ import { ComentarioService } from '../../service/comentario.service';
 import { Region } from '../../model/region';
 import { RegionService } from '../../service/region.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-comentario-add',
@@ -11,11 +13,13 @@ import { Router } from '@angular/router';
   styleUrl: './comentario-add.component.css'
 })
 export class ComentarioAddComponent implements OnInit{
-  correo : string = '';
-  region : Region = new Region(0,'');
-  comentario : string = '';
-
+  //correo : string = '';
+  //region : Region = new Region(0,'');
+  //comentario : string = '';
   regiones : Region [] = [];
+  resultado!: string;
+
+  comentario : Comentario = new Comentario('', new Region(0,''), '');
 
   constructor(
     private router : Router,
@@ -30,25 +34,23 @@ export class ComentarioAddComponent implements OnInit{
       })
   }
 
-  addEditComentario(correo : string){
-
-    console.log(this.comentario)
-
-  }
-
   ngOnInit(): void{
   }
 
   addComentario(){
-    let comentario = new Comentario(this.correo, this.region, this.comentario);
-    console.log(comentario);
-    if(this.region.id != 0){
-      this.comentarioService.createComentario(comentario).subscribe(
+        
+    //let comentario = new Comentario(this.correo, this.region, this.comentario);
+    console.log(this.comentario);
+    if(this.comentario.region.id != 0){
+      this.comentarioService.createComentario(this.comentario).subscribe(
         res => console.log(res)
       );
     }
-    this.router.navigate([""]);
-    
+    this.router.navigate([""]);    
   }
+
+ 
+
+  
 
 }
